@@ -28,6 +28,8 @@ public class MoodAnalyser {
             } else if (var.equalsIgnoreCase("Happy")) {
                 messageToReturn = var;
                 break;
+
+
             }
         }
 
@@ -35,6 +37,8 @@ public class MoodAnalyser {
             return "Happy";
         }
 
+
+        
         return messageToReturn;
     }
 
