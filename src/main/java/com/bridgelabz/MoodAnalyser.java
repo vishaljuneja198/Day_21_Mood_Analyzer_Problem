@@ -5,7 +5,7 @@ public class MoodAnalyser {
     String message;
 
     MoodAnalyser() {
-
+        this.message = "";
     }
 
     MoodAnalyser(String message) {
@@ -21,8 +21,12 @@ public class MoodAnalyser {
         String messageToReturn = "";
 
         try {
-            String split[] = message.split(" ");
 
+            if (message == "") {
+                throw new MoodAnalysisException("Empty Mood");
+            }
+
+            String split[] = message.split(" ");
             for (String var : split) {
                 if (var.equalsIgnoreCase("Sad")) {
                     messageToReturn = var;
@@ -34,6 +38,8 @@ public class MoodAnalyser {
             }
         } catch (NullPointerException e) {
             messageToReturn = "Happy";
+        } catch (MoodAnalysisException e) {
+            return e.getMessage();
         }
 
         if (messageToReturn.equals("")) {
@@ -42,5 +48,4 @@ public class MoodAnalyser {
 
         return messageToReturn;
     }
-
 }

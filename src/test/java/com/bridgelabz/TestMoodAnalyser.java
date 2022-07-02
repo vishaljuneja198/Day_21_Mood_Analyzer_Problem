@@ -2,11 +2,9 @@ package com.bridgelabz;
 
 //import org.junit.Test;
 
-//import static org.testng.AssertJUnit.assertEquals;
-import org.junit.jupiter.api.Assertions;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
+//import static org.testng.AssertJUnit.assertEquals;
 
 public class TestMoodAnalyser {
 
@@ -45,4 +43,10 @@ public class TestMoodAnalyser {
         assertEquals(result, "Happy");
     }
 
+    @Test
+    public void givenEmptyMood_whenTested_shouldReturnEmptyMood() {
+        MoodAnalyser mood = new MoodAnalyser();
+        String result = mood.analyseMood();
+        assertEquals(result, "Empty Mood");
+    }
 }
